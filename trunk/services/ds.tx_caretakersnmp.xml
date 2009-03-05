@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!-- 
+/**
+ * This is a file of the caretaker project.
+ * Copyright 2008 by n@work Internet Informationssystem GmbH (www.work.de)
+ * 
+ * @Author	Thomas Hempel 		<thomas@work.de>
+ * @Author	Martin Ficzel		<martin@work.de>
+ * @Author	Patrick Kollodzik	<patrick@work.de>
+ * 
+ * $$Id: ds.tx_caretaker_typo3_extensions.xml 33 2008-06-13 14:00:38Z thomas $$
+ */
+-->
+
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<ROOT>
+		<TCEforms> 
+                      <sheetTitle>HTTP-Communication</sheetTitle> 
+              </TCEforms> 
+		<type>array</type>
+		<el>
+		
+			<snmp_address>
+				<TCEforms>
+					<label>SNMP-Address</label>
+					<config>
+						<type>input</type>
+					</config>
+				</TCEforms>
+			</snmp_address>	
+								
+			<value_range_error>
+				<TCEforms>
+					<label>Value Range for Errors</label>
+					<config>
+						<type>input</type>
+						<size>10</size>
+					</config>
+				</TCEforms>
+			</value_range_error>
+			
+			<value_range_warning>
+				<TCEforms>
+					<label>Value Range for Warnings</label>
+					<config>
+						<type>input</type>
+						<size>10</size>
+					</config>
+				</TCEforms>
+			</value_range_warning>
+
+		</el>
+	</ROOT>
+</T3DataStructure>
