@@ -66,6 +66,8 @@ class tx_caretakersnmp extends tx_caretaker_TestServiceBase {
 		}
 		
 		// @todo maybe we have to parse the return value
+		snmp_set_oid_ouput_format(SNMP_OID_OUTPUT_NUMERIC);
+		
 		$value = snmpget  ( $this->instance->getHost() ,  $snmp_community  , $snmp_object_id, $snmp_timeout, $snmp_retries  );
 		
 		if (!$result || $this->isValueInRange ($value, $value_range_error ) ) {
