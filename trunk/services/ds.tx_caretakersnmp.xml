@@ -68,17 +68,7 @@
 					</config>
 				</TCEforms>
 			</snmp_retries>	
-														
-			<value_range_error>
-				<TCEforms>
-					<label>Value Range for Errors</label>
-					<config>
-						<type>input</type>
-						<size>10</size>
-					</config>
-				</TCEforms>
-			</value_range_error>
-			
+								
 			<value_range_warning>
 				<TCEforms>
 					<label>Value Range for Warnings</label>
@@ -88,6 +78,16 @@
 					</config>
 				</TCEforms>
 			</value_range_warning>
+
+			<value_range_error>
+				<TCEforms>
+					<label>Value Range for Errors</label>
+					<config>
+						<type>input</type>
+						<size>10</size>
+					</config>
+				</TCEforms>
+			</value_range_error>
 
 		</el>
 	</ROOT>
