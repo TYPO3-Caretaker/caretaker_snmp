@@ -69,7 +69,7 @@ class tx_caretakersnmp extends tx_caretaker_TestServiceBase {
 		snmp_set_valueretrieval(SNMP_VALUE_PLAIN);
 		
 		$value = snmpget  ( $this->instance->getHost() ,  $snmp_community  , $snmp_object_id, $snmp_timeout, $snmp_retries  );
-		t3lib_div::debug()
+		
 		if (/*!$result || */$this->isValueInRange ($value, $value_range_error ) ) {
 			$testResult = tx_caretaker_TestResult::create(TX_CARETAKER_STATE_ERROR, $value, 'Error '.$snmp_description);
 		} else if ($this->isValueInRange ($value, $value_range_warning ) ) {
