@@ -1,7 +1,5 @@
 <?php 
 
-require_once (t3lib_extMgm::extPath('caretaker').'classes/nodes/class.tx_caretaker_Test.php');
-require_once (t3lib_extMgm::extPath('caretaker').'classes/nodes/class.tx_caretaker_Instance.php');
 require_once (t3lib_extMgm::extPath('caretaker_snmp').'services/class.tx_caretakersnmp.php');
 
 class tx_caretakersnmp_testcase extends tx_phpunit_testcase  {
