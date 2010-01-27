@@ -64,15 +64,15 @@ class tx_caretakersnmpTestService extends tx_caretaker_TestServiceBase {
 		
 		
 		if ( !function_exists('snmpget') ){
-			return  tx_caretaker_TestResult::create(TX_CARETAKER_STATE_ERROR, 0, 'snmpget is not available');
+			return  tx_caretaker_TestResult::create(tx_caretaker_Constants::state_error, 0, 'snmpget is not available');
 		}
 		
 		if ( !$snmp_community || !$snmp_object_id  ){
-			return  tx_caretaker_TestResult::create(TX_CARETAKER_STATE_ERROR, 0, 'Community and Object ID must be specified');
+			return  tx_caretaker_TestResult::create(tx_caretaker_Constants::state_error, 0, 'Community and Object ID must be specified');
 		}
 		
 		if ( !$value_range_error && !$value_range_warning ){
-			return  tx_caretaker_TestResult::create(TX_CARETAKER_STATE_ERROR, 0, 'Error or Warnig Ranges must be defined');
+			return  tx_caretaker_TestResult::create(tx_caretaker_Constants::state_error, 0, 'Error or Warnig Ranges must be defined');
 		}
 		
 		// @todo maybe we have to parse the return value
@@ -81,11 +81,11 @@ class tx_caretakersnmpTestService extends tx_caretaker_TestServiceBase {
 		$value = snmpget  ( $this->instance->getHost() ,  $snmp_community  , $snmp_object_id, $snmp_timeout, $snmp_retries  );
 		
 		if (/*!$result || */$this->isValueInRange ($value, $value_range_error ) ) {
-			$testResult = tx_caretaker_TestResult::create(TX_CARETAKER_STATE_ERROR, $value, 'Error '.$snmp_description);
+			$testResult = tx_caretaker_TestResult::create(tx_caretaker_Constants::state_error, $value, 'Error '.$snmp_description);
 		} else if ($this->isValueInRange ($value, $value_range_warning ) ) {
-			$testResult = tx_caretaker_TestResult::create(TX_CARETAKER_STATE_WARNING, $value, 'Warning '.$snmp_description);
+			$testResult = tx_caretaker_TestResult::create(tx_caretaker_Constants::state_warning, $value, 'Warning '.$snmp_description);
 		} else {
-			$testResult = tx_caretaker_TestResult::create(TX_CARETAKER_STATE_OK, $value, 'OK '.$snmp_description );
+			$testResult = tx_caretaker_TestResult::create(tx_caretaker_Constants::state_ok, $value, 'OK '.$snmp_description );
 		}
 
 		return $testResult;
